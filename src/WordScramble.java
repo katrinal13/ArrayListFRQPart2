@@ -15,16 +15,14 @@ public class WordScramble
      */
     public static String scrambleWord(String word)
     {
-        int j = 0;
         for (int i = 0; i < word.length() - 1; i++)
         {
             String firstTwo = word.substring(i, i + 2);
             if (firstTwo.substring(0, 1).equals("A") && !firstTwo.substring(1, 2).equals("A"))
             {
-                word = word.substring(j, i) + firstTwo.substring(1, 2) + firstTwo.substring(0, 1) + word.substring(i + 2);
-                i += 2;
+                word = word.substring(0, i) + firstTwo.substring(1, 2) + firstTwo.substring(0, 1) + word.substring(i + 2);
+                i += 1;
             }
-            j++;
         }
         return word;
     }
